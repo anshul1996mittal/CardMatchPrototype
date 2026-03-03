@@ -5,10 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(UnityEngine.UI.GridLayoutGroup))]
 public class AdjustGridCellSize : MonoBehaviour
 {
-    
-    [SerializeField] private GameObject[] allChild;
-    [SerializeField] private int colSize = 3;
-    [SerializeField] private int rowSize = 2;
     GridLayoutGroup _gridlayout;
     private GridLayoutGroup gridlayout
     {
@@ -29,35 +25,23 @@ public class AdjustGridCellSize : MonoBehaviour
             return _layoutRect;
         }
 }
-    void Start()
+    
+    public void UpdateCellSize(int columnCount, int rowCount)
     {
-        UpdateCellSize();
-    }
-    private void OnValidate()
-    {
-        UpdateCellSize();
-    }
-    private void UpdateCellSize()
-    {
-        float spaceForSpacing = (colSize - 1) * gridlayout.spacing.y;
+        float spaceForSpacing = (columnCount - 1) * gridlayout.spacing.y;
         float width = layoutRect.rect.width - spaceForSpacing;
-        float xSizePerCell = width / colSize;
+        float xSizePerCell = width / columnCount;
 
         float height = layoutRect.rect.height - spaceForSpacing;
-        float ySizePerCell = height / rowSize;
+        float ySizePerCell = height / rowCount;
         gridlayout.cellSize = new Vector2(ySizePerCell, ySizePerCell);
 
         var rect = layoutRect.rect;
-        rect.width = (ySizePerCell * colSize) + spaceForSpacing;
+        rect.width = (ySizePerCell * columnCount) + spaceForSpacing;
         layoutRect.sizeDelta = new Vector2(rect.width, rect.height);
 
-
-        int totalCount = 0;
-        for (int i = 0; i < allChild.Length; i++)
-        {
-            allChild[i].SetActive((totalCount < colSize * rowSize));
-            totalCount++;
-        }
-        
+         StartCoroutine(GameManager.Instance.ActionCallAfterTime(1, true, () => {
+            _gridlayout.enabled = false;
+        }));
     }
 }
