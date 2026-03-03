@@ -41,4 +41,6 @@ MonoBehaviour:
   - {fileID: 1841486479, guid: 0216082c58e874e4692b11e7891bb707, type: 3}
   - {fileID: 1702797570, guid: 0216082c58e874e4692b11e7891bb707, type: 3}
   - {fileID: -255355752, guid: 0216082c58e874e4692b11e7891bb707, type: 3}
-  ComboResetTimer: 2
+  GamePlayTime: 50
+  ComboResetTimer: 3
+  ScoreMultiplier: 10

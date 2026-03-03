@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS
@@ -53,6 +54,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 	public virtual void OnApplicationQuit()
 	{
 		// release reference on exit
+		Debug.Log("Parents function call");
 		_instance = null;
 	}
 

@@ -2,164 +2,287 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AdjustGridCellSize))]
+/// <summary>
+/// Controls the core logic of the memory match game.
+/// Manages board creation, card interaction, scoring, timing, and game state.
+/// </summary>
 public class MemoryGameController : MonoBehaviour
 {
+    public AdjustGridCellSize adjustGridCellSize;
+    public GameSave gameSave;
+
+    public GameObject cardPrefab;
+    public GameInfo gameInfo;
+
+    private List<CardScript> allCard = new List<CardScript>();
+    public List<Sprite> suffledSpriteList { get; private set; }
+    public List<bool> CardFlippedData { get; private set; }
+
+    private bool firstClick, secoundClick;
+    private CardScript firstClickCard, secoundClickCard;
     
-    [SerializeField] private GameObject cardPrefab;
-    [SerializeField] private GameInfo gameInfo;
 
-    private AdjustGridCellSize _adjustGridCellSize;
-    private AdjustGridCellSize adjustGridCellSize{
-        get { 
-            if(_adjustGridCellSize==null)
-                _adjustGridCellSize = GetComponent<AdjustGridCellSize>();
-            return _adjustGridCellSize; 
-            } 
-        }
-    private List<CardScript> allCards = new List<CardScript>();
+    public bool isGameCompleted {  get; private set; }
+    public int currentScore { get; private set; }
+    public float currentTimer { get; private set; }
+    public int countCorrectCardFlip { get; private set; }
 
-    private bool firstClick, secondClick;
-    private CardScript firstClickCard, secondClickCard;
-
-    private int currentScore;
     private float comboTimer;
     private int comboCount=1;
-    private bool isComboActive;
 
-    private int matchedPairs;
+    private bool isComboTimerStart;
+
+    
     void Start()
     {
-        CreateBoard();
+        if (PlayerPrefsHalper.IS_GAME_SAVED)
+        {
+            CreateSavedBoard();
+            currentTimer = PlayerPrefsHalper.SAVED_GAME_TIMER;
+            currentScore = PlayerPrefsHalper.SAVED_GAME_CURRENT_SCORE;
+            countCorrectCardFlip = PlayerPrefsHalper.COUNT_CORRECT_CARD_FLIP;
+        }
+        else
+        {
+            CreateBoard();
+            currentTimer = gameInfo.GamePlayTime;
+            GamePlayManager.Instance.ScoreUpdate(currentScore);
+        }
     }
+
+
     private void Update()
     {
-        if (isComboActive)
+       
+        if (isGameCompleted)
+        {
+            return;
+        }
+        ComboTimer();
+        GameTimerLogic();
+
+    }
+
+    // Combo Timer Logic
+    /// <summary>
+    /// Updates the combo timer and resets the combo count if the timer expires.
+    /// </summary>
+    private void ComboTimer()
+    {
+        if (isComboTimerStart)
         {
             comboTimer += Time.deltaTime;
+            GamePlayManager.Instance.ComboTimerUpdate(comboCount * 2,
+                1-(comboTimer / gameInfo.ComboResetTimer));
             if (comboTimer >= gameInfo.ComboResetTimer)
             {
-                isComboActive = false;
+                isComboTimerStart = false;
                 comboCount = 1;
                 comboTimer = 0;
+                GamePlayManager.Instance.ComboObjectActivate(false);
             }
         }
     }
+
+    //Game Play Timer Logic
+    //cuurentTime value get from GameInfo scriptable object.
+    /// <summary>
+    /// Updates the main game timer and checks for level failure (time out).
+    /// </summary>
+    private void GameTimerLogic()
+    {
+        currentTimer -= Time.deltaTime;
+        GamePlayManager.Instance.TimerUpdate(TextFormate.getSecToMinNano(currentTimer));
+        if (currentTimer < 0)
+        {
+            GamePlayManager.Instance.LevelFailed();
+            isGameCompleted = true;
+        }
+    }
+
+    //NEW Board Creation
+    //Card instance through this Function based on ROW and COLUMN value.
+    /// <summary>
+    /// Creates a new game board by instantiating cards and shuffling sprites.
+    /// </summary>
     private void CreateBoard()
     {
         int rowCount = PlayerPrefsHalper.ROW_COUNT;
         int columnCount = PlayerPrefsHalper.COLUMN_COUNT;
         int totalCardCount = rowCount * columnCount;
-        
-        
-        // Create a list of indices (pairs) and shuffle them
-        List<int> shuffledIndices = CreateShuffleList(totalCardCount);
-
+       
+        suffledSpriteList = CreateSuffuleList(totalCardCount);
+        CardFlippedData = new List<bool>();
         for (int i = 0; i < totalCardCount; i++)
         {
-            
             GameObject card = Instantiate(cardPrefab);
             card.transform.SetParent(transform, false);
             card.name = "Card " + i;
 
             CardScript cardScript = card.GetComponent<CardScript>();
-            allCards.Add(cardScript);
-            cardScript.cardButton.onClick.AddListener(() => OnCardSelected(cardScript));
+            allCard.Add(cardScript);
+            CardFlippedData.Add(false);
+            cardScript.cardButton.onClick.AddListener(() => CardSelect(cardScript));
 
-            // Assign sprite and ID based on the shuffled index
-            int dataIndex = shuffledIndices[i];
-            cardScript.mainSprite = gameInfo.allCardSprites[dataIndex];
-            cardScript.CardID = dataIndex;
+            
+            cardScript.mainSprite = suffledSpriteList[i];
+            cardScript.CardID = int.Parse(suffledSpriteList[i].name);
         }
         adjustGridCellSize.UpdateCellSize(columnCount,rowCount);
     }
 
-    private List<int> CreateShuffleList(int totalCardCount)
+    // OLD Board Creation based on saved value at PlayerPrefs
+    /// <summary>
+    /// Recreates the game board from saved data, restoring card states.
+    /// </summary>
+    private void CreateSavedBoard()
     {
-        List<int> idList = new List<int>();
-        // Add pairs of IDs
-        for(int i = 0; i < totalCardCount/2; i++)
+        int rowCount = PlayerPrefsHalper.ROW_COUNT;
+        int columnCount = PlayerPrefsHalper.COLUMN_COUNT;
+        int totalCardCount = rowCount * columnCount;
+
+        suffledSpriteList = gameSave.GetSuffuleList();
+        CardFlippedData = PlayerPrefsHalper.SAVED_GAME_CARD_FLIPPED_DATA;
+        for (int i = 0; i < totalCardCount; i++)
         {
-            idList.Add(i);
-            idList.Add(i);
+            GameObject card = Instantiate(cardPrefab);
+            card.transform.SetParent(transform, false);
+            card.name = "Card " + i;
+
+            CardScript cardScript = card.GetComponent<CardScript>();
+            allCard.Add(cardScript);
+            cardScript.cardButton.onClick.AddListener(() => CardSelect(cardScript));
+
+
+            cardScript.mainSprite = suffledSpriteList[i];
+            cardScript.CardID = int.Parse(suffledSpriteList[i].name);
+           
         }
-        
-        // Fisher-Yates shuffle
-       for(int i = 0; i < idList.Count; i++)
-        {
-            int temp = idList[i];
-            int randomNumber = Random.Range(i, idList.Count);
-            idList[i] = idList[randomNumber];
-            idList[randomNumber] = temp;
-        }
-        return idList;
+        adjustGridCellSize.UpdateCellSize(columnCount, rowCount);
+
+        StartCoroutine(GameManager.Instance.ActionCallAfterTime(.03f, true, () => {
+            for (int i = 0; i < totalCardCount; i++)
+            {
+                allCard[i].gameObject.SetActive(!CardFlippedData[i]);
+            }
+        }));
+       
     }
 
-    public void OnCardSelected(CardScript cardScript)
+    //Suffling the Sprites.
+    /// <summary>
+    /// Creates a list of paired sprites and shuffles them for the board.
+    /// </summary>
+    private List<Sprite> CreateSuffuleList(int totalCardCount)
     {
-        // Ignore input if we are already checking a match or clicked the same card
-        if (secondClick || cardScript == firstClickCard) return;
+        List<Sprite> allSprites = new List<Sprite>();
+        for(int i = 0; i < totalCardCount/2; i++)
+        {
+            allSprites.Add(gameInfo.allCardSprites[i]);
+            allSprites.Add(gameInfo.allCardSprites[i]);
+        }
+       for(int i = 0; i < allSprites.Count; i++)
+        {
+            Sprite temp = allSprites[i];
+            int randomNumber = Random.Range(i, allSprites.Count);
+            allSprites[i] = allSprites[randomNumber];
+            allSprites[randomNumber] = temp;
+        }
+        return allSprites;
+    }
 
+    //All Card Listener connected to this function.
+    //Mange user click first time and secound time.
+    /// <summary>
+    /// Handles card selection input. Manages first and second card clicks.
+    /// </summary>
+    public void CardSelect(CardScript cardScript)
+    {
         if (!firstClick)
         {
             firstClick = true;
             firstClickCard = cardScript;
-            cardScript.cardImage.sprite = cardScript.mainSprite;
-        }
-        else if (!secondClick)
-        {
-            secondClick = true;
-            secondClickCard = cardScript;
-            cardScript.cardImage.sprite = cardScript.mainSprite;
 
+            //CardView have all functionality to mange animation of fliping the Card
+            cardScript.CardView();
+        }
+        else if (!secoundClick && firstClickCard!=cardScript)
+        {
+            secoundClick = true;
+            secoundClickCard = cardScript;
+    
+            cardScript.CardView();
             StartCoroutine(CheckCardMatch());
         }
     }
+
+    //Based on user two choies this function calculate the right/wrong gusses.
+    //Score calculation.
+    //Combo initiated
+    /// <summary>
+    /// Coroutine to check if the two selected cards match.
+    /// Handles scoring, combos, and card states (match/mismatch).
+    /// </summary>
     IEnumerator CheckCardMatch()
     {
-        yield return new WaitForSeconds(1f);
-        
-        if(firstClickCard.CardID == secondClickCard.CardID)
+        yield return new WaitForSeconds(.5f);
+        if(firstClickCard.CardID == secoundClickCard.CardID)
         {
-            // Match found
-            if (isComboActive)
+            if (isComboTimerStart)
             {
                 comboCount *= 2;
                 comboTimer = 0;
             }
             else
             {
-                isComboActive = true;
-                // TODO: Trigger combo UI/Animation here
+                isComboTimerStart = true;
             }
-            
-            currentScore += comboCount;
-            
-            // Disable matched cards
-            firstClickCard.gameObject.SetActive(false);
-            secondClickCard.gameObject.SetActive(false);
+            GamePlayManager.Instance.scoreEffect.SetScoreEffect((comboCount * gameInfo.ScoreMultiplier), firstClickCard.transform.position);
+            currentScore =  currentScore + (comboCount*gameInfo.ScoreMultiplier);
 
+
+            //Card Match have functionality to mange Animation and its disable the selected cards.
+            firstClickCard.CardMatch();
+            secoundClickCard.CardMatch();
+
+            //This data manage for Save Game Logic.
+            CardFlippedData[allCard.IndexOf(firstClickCard)] = true;
+            CardFlippedData[allCard.IndexOf(secoundClickCard)] = true;
+
+            GamePlayManager.Instance.ScoreUpdate(currentScore);
             CheckGameFinished();
         }
         else
         {
-            // No match, reset sprites
-            firstClickCard.cardImage.sprite = firstClickCard.backgroundSprite;
-            secondClickCard.cardImage.sprite = secondClickCard.backgroundSprite;
+            //Reset the button when user choise wrong
+          
+            firstClickCard.CardNotMatch();
+            secoundClickCard.CardNotMatch();
+
+            if (isComboTimerStart)
+            {
+                isComboTimerStart = false;
+                comboCount = 1;
+                comboTimer = 0;
+                GamePlayManager.Instance.ComboObjectActivate(false);
+            }
         }
-        
-        // Reset turn
         firstClick = false;
-        secondClick = false;
-        firstClickCard = null;
-        secondClickCard = null;
+        secoundClick = false;
     }
-    void CheckGameFinished()
+    
+    /// <summary>
+    /// Checks if all card pairs have been found to complete the level.
+    /// </summary>
+    private void CheckGameFinished()
     {
-        matchedPairs++;
-        if(matchedPairs == allCards.Count / 2)
+        countCorrectCardFlip++;
+        if(countCorrectCardFlip== allCard.Count / 2)
         {
-            Debug.Log("Game Completed. Final Score: " + currentScore);
+            StartCoroutine(GameManager.Instance.ActionCallAfterTime(.5f, true, () => {
+                GamePlayManager.Instance.LevelCompleted(currentScore);
+            }));
+            isGameCompleted = true;
         }
     }
 }

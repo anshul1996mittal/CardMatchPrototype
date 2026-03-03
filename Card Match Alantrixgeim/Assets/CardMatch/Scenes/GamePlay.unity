@@ -1010,6 +1010,7 @@ RectTransform:
   - {fileID: 1469114529}
   - {fileID: 1800807852}
   - {fileID: 311035785}
+  - {fileID: 850021905}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2777,6 +2778,124 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &850021904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850021905}
+  - component: {fileID: 850021909}
+  - component: {fileID: 850021908}
+  - component: {fileID: 850021907}
+  - component: {fileID: 850021906}
+  m_Layer: 5
+  m_Name: ScoreEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &850021905
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850021904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 264017229}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -18.467499, y: -23.337}
+  m_SizeDelta: {x: 196.935, y: 76.675}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &850021906
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850021904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5cde3a1d94e945bfabefe30f667c17e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &850021907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850021904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5397ccd732934193a77ae8daa15f798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 850021908}
+  rectTransform: {fileID: 850021905}
+  animator: {fileID: 850021906}
+--- !u!114 &850021908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850021904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b0b25c7081699704f917d02e28f31692, type: 3}
+    m_FontSize: 55
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 55
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: +10
+--- !u!222 &850021909
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850021904}
+  m_CullTransparentMesh: 1
 --- !u!1 &953814098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,7 +2979,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953814101}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087731748}
+        m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+        m_MethodName: playSFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c7f0c0c30565d4849a31376128544cc5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2089873918}
+        m_TargetAssemblyTypeName: GamePlayManager, Assembly-CSharp
+        m_MethodName: OpenMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953814101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,7 +3681,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1109342140}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087731748}
+        m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+        m_MethodName: playSFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c7f0c0c30565d4849a31376128544cc5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2089873918}
+        m_TargetAssemblyTypeName: GamePlayManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1109342140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3901,7 +4068,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1209963846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087731748}
+        m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+        m_MethodName: playSFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c7f0c0c30565d4849a31376128544cc5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2089873918}
+        m_TargetAssemblyTypeName: GamePlayManager, Assembly-CSharp
+        m_MethodName: OpenMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1209963846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4251,7 +4442,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1335017124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1087731748}
+        m_TargetAssemblyTypeName: AudioScript, Assembly-CSharp
+        m_MethodName: playSFX
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: c7f0c0c30565d4849a31376128544cc5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2089873918}
+        m_TargetAssemblyTypeName: GamePlayManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1335017124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4788,6 +5003,7 @@ GameObject:
   - component: {fileID: 1469114533}
   - component: {fileID: 1469114532}
   - component: {fileID: 1469114534}
+  - component: {fileID: 1469114535}
   m_Layer: 5
   m_Name: GameBoard
   m_TagString: Untagged
@@ -4901,8 +5117,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9028fe2da13e34fb5af9f4ebca96f562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adjustGridCellSize: {fileID: 1469114532}
+  gameSave: {fileID: 1469114535}
   cardPrefab: {fileID: 3866413526205236946, guid: 5df8cb6ca67d14a2990363fa475a5472, type: 3}
   gameInfo: {fileID: 11400000, guid: 35ac7c72f1eaa46e3a95c284c3256bc2, type: 2}
+--- !u!114 &1469114535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469114528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e375b8e5d582d42a4b7ff41a167878ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 1469114534}
 --- !u!1 &1474577293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,7 +6026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1800807852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6718,12 +6949,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd152596750774f05add0bf95f664ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameSave: {fileID: 1469114535}
   pauseScreen: {fileID: 1652615534}
-  scoreTxt: {fileID: 0}
-  timerTxt: {fileID: 0}
+  scoreTxt: {fileID: 1902619081}
+  timerTxt: {fileID: 71833770}
   comboObject: {fileID: 1800807851}
   comboFillImage: {fileID: 1296633911}
   comboTxt: {fileID: 145491990}
+  levelCompletePanel: {fileID: 986685364}
+  levelCompleteCurrectScoreTxt: {fileID: 1383687983}
+  levelCompleteHighScoreTxt: {fileID: 394654847}
+  levelFailedPanel: {fileID: 2108985642}
+  levelFailedHighScoreTxt: {fileID: 44542869}
+  levelFailedClip: {fileID: 8300000, guid: 4da0112238ee54b81b95066920154e7c, type: 3}
+  levelCompleteClip: {fileID: 8300000, guid: f2a09c210c428426bba7a5ff8c6d23ef, type: 3}
+  scoreEffect: {fileID: 850021907}
 --- !u!4 &2089873919
 Transform:
   m_ObjectHideFlags: 0

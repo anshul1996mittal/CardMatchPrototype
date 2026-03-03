@@ -11,7 +11,14 @@ public sealed class GameManager : Singleton<GameManager>
 {
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (IsAwake)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(Instance.gameObject);
+        }
     }
 
     /// <summary>

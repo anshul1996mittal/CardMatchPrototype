@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 /// <summary>
 /// Manages the UI and navigation for the main menu scene.
 /// </summary>
@@ -11,9 +10,18 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private GameObject ExitPanel;
 
+    [SerializeField] private Button continueButton;
+    [SerializeField] private Text continueBoardSizeTxt;
+
     private bool isExitPanelVisible;
 
 
+    void Start()
+    {
+
+        continueButton.interactable=PlayerPrefsHalper.IS_GAME_SAVED;
+        continueBoardSizeTxt.text = PlayerPrefsHalper.ROW_COUNT + "X" + PlayerPrefsHalper.COLUMN_COUNT;
+    }
     void Update()
     {
         // Handle the Escape key on desktop or the back button on Android to toggle the exit panel.
@@ -23,13 +31,13 @@ public class MainMenuManager : MonoBehaviour
             ExitButton(isExitPanelVisible);
         }
     }
-
+#region Button Listener 
     /// <summary>
     /// Placeholder for a continue game feature. Currently not implemented.
     /// </summary>
     public void CountinueButton()
     {
-        // TODO: Implement logic to continue a saved game.
+        GameManager.Instance.SceneLoad("GamePlay");
     }
     
     /// <summary>
@@ -40,6 +48,7 @@ public class MainMenuManager : MonoBehaviour
     {
         PlayerPrefsHalper.ROW_COUNT = 2;
         PlayerPrefsHalper.COLUMN_COUNT = 2;
+        PlayerPrefsHalper.IS_GAME_SAVED = false;
         GameManager.Instance.SceneLoad("GamePlay");
     }
     /// <summary>
@@ -50,6 +59,7 @@ public class MainMenuManager : MonoBehaviour
     {
         PlayerPrefsHalper.ROW_COUNT = 2;
         PlayerPrefsHalper.COLUMN_COUNT = 3;
+        PlayerPrefsHalper.IS_GAME_SAVED = false;
         GameManager.Instance.SceneLoad("GamePlay");
     }
     /// <summary>
@@ -60,6 +70,7 @@ public class MainMenuManager : MonoBehaviour
     {
         PlayerPrefsHalper.ROW_COUNT = 5;
         PlayerPrefsHalper.COLUMN_COUNT = 6;
+        PlayerPrefsHalper.IS_GAME_SAVED = false;
         GameManager.Instance.SceneLoad("GamePlay");
     }
     /// <summary>
@@ -78,6 +89,7 @@ public class MainMenuManager : MonoBehaviour
     {
         ExitPanel.SetActive(value);
     }
+    #endregion
     /// <summary>
     /// Quits the application.
     /// </summary>

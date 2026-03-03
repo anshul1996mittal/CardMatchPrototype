@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_0
+      name: 9
       rect:
         serializedVersion: 2
         x: 0
@@ -113,7 +113,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -126,7 +126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_1
+      name: 10
       rect:
         serializedVersion: 2
         x: 153
@@ -134,7 +134,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_2
+      name: 11
       rect:
         serializedVersion: 2
         x: 306
@@ -155,7 +155,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_3
+      name: 12
       rect:
         serializedVersion: 2
         x: 459
@@ -176,7 +176,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_4
+      name: 13
       rect:
         serializedVersion: 2
         x: 0
@@ -197,7 +197,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,7 +210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_5
+      name: 14
       rect:
         serializedVersion: 2
         x: 153
@@ -218,7 +218,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,7 +231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_6
+      name: 15
       rect:
         serializedVersion: 2
         x: 306
@@ -239,7 +239,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,7 +252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_7
+      name: 16
       rect:
         serializedVersion: 2
         x: 459
@@ -260,7 +260,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_8
+      name: 17
       rect:
         serializedVersion: 2
         x: 0
@@ -281,7 +281,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_9
+      name: 18
       rect:
         serializedVersion: 2
         x: 153
@@ -302,7 +302,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_10
+      name: 19
       rect:
         serializedVersion: 2
         x: 306
@@ -323,7 +323,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,7 +336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_11
+      name: 20
       rect:
         serializedVersion: 2
         x: 459
@@ -344,7 +344,7 @@ TextureImporter:
         width: 153
         height: 136
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,18 +367,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_0: 2059515120
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_1: 955877158
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_10: 664560833
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_11: 770126763
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_2: -700750503
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_3: 2048635088
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_4: -956920154
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_5: -366103019
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_6: 318066956
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_7: 460207070
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_8: -784015576
-      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_9: 1756208691
+      10: 955877158
+      11: -700750503
+      12: 2048635088
+      13: -956920154
+      14: -366103019
+      15: 318066956
+      16: 460207070
+      17: -784015576
+      18: 1756208691
+      19: 664560833
+      20: 770126763
+      9: 2059515120
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -25,7 +25,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(Instance.gameObject);
         }
     }
 

@@ -6,5 +6,8 @@ using UnityEngine;
 public class GameInfo : ScriptableObject
 {
     public Sprite[] allCardSprites;
+    public float GamePlayTime = 50;
     public float ComboResetTimer = 2;
+
+    public int ScoreMultiplier = 10;
 }
