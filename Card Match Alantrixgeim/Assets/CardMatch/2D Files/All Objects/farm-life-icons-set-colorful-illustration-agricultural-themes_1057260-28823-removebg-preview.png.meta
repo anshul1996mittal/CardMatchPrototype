@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: 16ae0271c57bf47d88187d9a570a93c4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3558449997380464a99df93fc091b272
+      internalID: 2059515120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 272
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc58f8537c81441eb8ee5735e00d356
+      internalID: 955877158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 272
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1123c430ac11c4d028f564cdc4f97c2d
+      internalID: -700750503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 272
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32bb09d4ed396406c8ea4f335689cbba
+      internalID: 2048635088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b6b640f57d440ed9e1005bb1d5506f
+      internalID: -956920154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 136
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3faf4391da1b489e995d809e6f8031a
+      internalID: -366103019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 136
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b7855a2e94e403785e9dc081f4e3b2
+      internalID: 318066956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 136
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3880b88b7b342859ba9718ad847fad
+      internalID: 460207070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4812f84acdd14ad0b6174bc4ac02441
+      internalID: -784015576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00850dcb3b304a0a8913aec01550f3e
+      internalID: 1756208691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acf0d1452a3d4065b1e9bf12c215904
+      internalID: 664560833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 0
+        width: 153
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0e0629987fd475abd655e6ffe0ab3f
+      internalID: 770126763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_0: 2059515120
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_1: 955877158
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_10: 664560833
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_11: 770126763
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_2: -700750503
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_3: 2048635088
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_4: -956920154
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_5: -366103019
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_6: 318066956
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_7: 460207070
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_8: -784015576
+      farm-life-icons-set-colorful-illustration-agricultural-themes_1057260-28823-removebg-preview_9: 1756208691
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

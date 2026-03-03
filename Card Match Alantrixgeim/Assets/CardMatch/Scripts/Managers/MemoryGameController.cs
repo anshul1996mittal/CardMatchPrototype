@@ -50,12 +50,14 @@ public class MemoryGameController : MonoBehaviour
         int rowCount = PlayerPrefsHalper.ROW_COUNT;
         int columnCount = PlayerPrefsHalper.COLUMN_COUNT;
         int totalCardCount = rowCount * columnCount;
-
+        
+        
         // Create a list of indices (pairs) and shuffle them
         List<int> shuffledIndices = CreateShuffleList(totalCardCount);
 
         for (int i = 0; i < totalCardCount; i++)
         {
+            
             GameObject card = Instantiate(cardPrefab);
             card.transform.SetParent(transform, false);
             card.name = "Card " + i;
